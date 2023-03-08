@@ -116,6 +116,7 @@
     "mongoose": "^6.4.6",
     "mongoose-paginate-v2": "^1.7.1",
     "morgan": "^1.10.0",
+    "ngrok": "^4.3.3",
     "nodemailer": "^6.7.2",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",

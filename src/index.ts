@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import ngrok from 'ngrok';
 import app from './app';
 import config from './config/config';
 import logger from './modules/logger/logger';
@@ -8,6 +9,10 @@ mongoose.connect(config.mongoose.url).then(() => {
   logger.info('Connected to MongoDB');
   server = app.listen(config.port, () => {
     logger.info(`Listening to port ${config.port}`);
+
+    ngrok.connect(3000).then((info) => {
+      logger.info(`Node.js local server is publicly-accessible at ${info}`);
+    });
   });
 });
 
